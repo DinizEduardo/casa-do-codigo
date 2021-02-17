@@ -1,14 +1,9 @@
 package br.com.zup.casadocodigo.NovoAutor;
 
-import org.hibernate.validator.constraints.Length;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.util.Assert;
-
 import javax.persistence.*;
-import javax.validation.constraints.*;
-
-import java.time.Instant;
-import java.time.LocalDate;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,6 +19,7 @@ public class Autor {
 
     @NotBlank
     @Email
+    @Column(unique = true)
     private String email;
 
     @NotBlank
@@ -31,6 +27,11 @@ public class Autor {
     private String descricao;
 
     private LocalDateTime dataCriacao = LocalDateTime.now();
+
+    @Deprecated
+    public Autor() {
+
+    }
 
     public Autor(@NotBlank String nome,
                  @NotBlank @Email String email,

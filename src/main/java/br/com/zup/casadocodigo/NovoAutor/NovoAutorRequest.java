@@ -1,7 +1,5 @@
 package br.com.zup.casadocodigo.NovoAutor;
 
-import br.com.zup.casadocodigo.NovoAutor.Autor;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -29,5 +27,17 @@ public class NovoAutorRequest {
     public Autor toModel() {
 
         return new Autor(this.nome, this.email, this.descricao);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 }
