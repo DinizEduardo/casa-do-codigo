@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.NovoAutor;
+package br.com.zup.casadocodigo.novoAutor;
 
 import br.com.zup.casadocodigo.compartilhado.UniqueValue;
 

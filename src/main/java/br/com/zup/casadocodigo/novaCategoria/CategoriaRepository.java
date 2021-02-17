@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.NovaCategoria;
+package br.com.zup.casadocodigo.novaCategoria;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

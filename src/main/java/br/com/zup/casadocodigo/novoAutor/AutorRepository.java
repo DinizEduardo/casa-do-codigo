@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.NovoAutor;
+package br.com.zup.casadocodigo.novoAutor;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
