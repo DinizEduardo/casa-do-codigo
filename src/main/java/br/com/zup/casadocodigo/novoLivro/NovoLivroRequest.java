@@ -67,8 +67,36 @@ public class NovoLivroRequest {
         this.idAutor = idAutor;
     }
 
-    public LocalDate getDataLancamento() {
-        return dataLancamento;
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public Integer getPaginas() {
+        return paginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public Long getIdCategoria() {
+        return idCategoria;
+    }
+
+    public Long getIdAutor() {
+        return idAutor;
     }
 
     public void setDataLancamento(LocalDate dataLancamento) {

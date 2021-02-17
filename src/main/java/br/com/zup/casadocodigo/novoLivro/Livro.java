@@ -73,6 +73,9 @@ public class Livro {
         this.categoria = categoria;
         this.autor = autor;
     }
+    @Deprecated
+    public Livro() {
+    }
 
     @Override
     public String toString() {
@@ -88,5 +91,13 @@ public class Livro {
                 ", categoria=" + categoria +
                 ", autor=" + autor +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 }

@@ -1,16 +1,16 @@
 package br.com.zup.casadocodigo.novoLivro;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.xml.ws.Response;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/livros")
@@ -28,6 +28,15 @@ public class LivroController {
 
         return livro.toString();
 
+    }
+
+    @GetMapping
+    @Transactional
+    public List<RetornoLivro> listar() {
+        return manager.createQuery("select l from Livro l", Livro.class)
+                .getResultStream()
+                .map(RetornoLivro::new)
+                .collect(Collectors.toList());
     }
 
 }
