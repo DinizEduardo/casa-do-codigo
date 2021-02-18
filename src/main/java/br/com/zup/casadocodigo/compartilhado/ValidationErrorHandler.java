@@ -60,6 +60,8 @@ public class ValidationErrorHandler {
         List<ObjectError> globalErrors = List.of(new ObjectError("", invalidFormat.getValue()+" não é um valor válido"));
         List<FieldError> fieldErrors = List.of();
 
+
+
         return buildValidationErrors(globalErrors,
                 fieldErrors);
     }

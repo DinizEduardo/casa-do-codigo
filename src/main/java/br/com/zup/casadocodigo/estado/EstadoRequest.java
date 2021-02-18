@@ -1,7 +1,8 @@
 package br.com.zup.casadocodigo.estado;
 
 import br.com.zup.casadocodigo.compartilhado.ExistsId;
-import br.com.zup.casadocodigo.compartilhado.UniqueStateValue;
+import br.com.zup.casadocodigo.compartilhado.UniqueValue;
+import br.com.zup.casadocodigo.compartilhado.UniqueValues;
 import br.com.zup.casadocodigo.pais.Pais;
 import org.springframework.util.Assert;
 
@@ -9,9 +10,9 @@ import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+@UniqueValues(domainClass = Estado.class, fields = {"nome", "idPais"}, aliases = {"nome", "pais.id"}, message = "Estado já cadastro nesse Pais")
 public class EstadoRequest {
     @NotBlank
-    @UniqueStateValue(domainClass = Estado.class, fieldName = "nome", message = "Nome do estado já cadastrado")
     private String nome;
 
     @ExistsId(domainClass = Pais.class, fieldName = "id")
@@ -19,7 +20,7 @@ public class EstadoRequest {
     private Long idPais;
 
     public EstadoRequest(String nome, Long idPais) {
-        this.nome = String.format("%s:%d", nome, idPais);
+        this.nome = nome;
         this.idPais = idPais;
     }
 

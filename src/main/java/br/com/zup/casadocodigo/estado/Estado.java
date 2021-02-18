@@ -7,7 +7,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "estados")
+@Table(name = "estados", uniqueConstraints = @UniqueConstraint(columnNames = {
+        "nome",
+        "pais_id"
+}))
 public class Estado {
 
     @Id
