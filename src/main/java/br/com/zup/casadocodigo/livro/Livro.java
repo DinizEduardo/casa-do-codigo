@@ -1,8 +1,7 @@
-package br.com.zup.casadocodigo.novoLivro;
+package br.com.zup.casadocodigo.livro;
 
-import br.com.zup.casadocodigo.compartilhado.UniqueValue;
-import br.com.zup.casadocodigo.novaCategoria.Categoria;
-import br.com.zup.casadocodigo.novoAutor.Autor;
+import br.com.zup.casadocodigo.categoria.Categoria;
+import br.com.zup.casadocodigo.autor.Autor;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;

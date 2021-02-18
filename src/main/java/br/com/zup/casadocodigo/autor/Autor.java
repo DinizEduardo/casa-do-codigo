@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.novoAutor;
+package br.com.zup.casadocodigo.autor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

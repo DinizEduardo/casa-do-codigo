@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.novaCategoria;
+package br.com.zup.casadocodigo.categoria;
 
 import br.com.zup.casadocodigo.compartilhado.UniqueValue;
 

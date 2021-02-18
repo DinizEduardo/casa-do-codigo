@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.novoAutor;
+package br.com.zup.casadocodigo.autor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

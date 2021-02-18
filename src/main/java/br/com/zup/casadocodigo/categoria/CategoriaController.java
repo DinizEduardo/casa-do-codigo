@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.novaCategoria;
+package br.com.zup.casadocodigo.categoria;
 
 import org.springframework.web.bind.annotation.*;
 

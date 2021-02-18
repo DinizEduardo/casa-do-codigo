@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.novoLivro;
+package br.com.zup.casadocodigo.livro;
 
 public class RetornoLivro {
 
