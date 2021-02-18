@@ -51,7 +51,7 @@
   Tanto para o cadastro do autor quanto para o cadastro da categoria, foi necessário realizar uma validação de valor único no sistema. Neste caso, só muda um detalhe da query que estamos executando para fazer a verificação. E agora, será que você consegue criar seu validador customizado para reutilizá-lo nas validações de email de autor e nome de categoria? 
 
 ## 0-0-5-criar-um-novo-livro
-  ### **necessidades**
+  ## necessidades
 
   *   Um título
   *   Um resumo do que vai ser encontrado no livro
