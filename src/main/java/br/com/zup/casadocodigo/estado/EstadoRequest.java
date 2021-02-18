@@ -37,9 +37,6 @@ public class EstadoRequest {
 
         Assert.state(pais!= null, "Você está tentando cadastrar em um pais que não existe no nosso banco");
 
-        return new Estado(nome.split(":")[0], pais);
-
-
-
+        return new Estado(nome, pais);
     }
 }
