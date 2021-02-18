@@ -1,13 +1,14 @@
-package br.com.zup.casadocodigo.pais;
+package br.com.zup.casadocodigo.cidade;
 
-import br.com.zup.casadocodigo.compartilhado.UniqueValue;
+import br.com.zup.casadocodigo.estado.Estado;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "paises")
-public class Pais {
+@Table(name = "cidades")
+public class Cidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,13 +17,9 @@ public class Pais {
     @NotBlank
     private String nome;
 
-    public Pais(@NotBlank String nome) {
-        this.nome = nome;
-    }
-
-    @Deprecated
-    public Pais() {
-    }
+    @ManyToOne
+    @NotNull
+    private Estado estado;
 
     public Long getId() {
         return id;
