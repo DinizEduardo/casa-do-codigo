@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 public class ClienteRequest {
     @Email
@@ -35,7 +36,6 @@ public class ClienteRequest {
     @NotNull
     private Long idCidade;
 
-    @NotNull
     private Long idEstado;
 
     @NotNull
@@ -60,7 +60,7 @@ public class ClienteRequest {
         this.email = email;
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.documento = documento;
+        this.documento = documento.replaceAll("[^\\d]", "");;
         this.endereco = endereco;
         this.idCidade = idCidade;
         this.idEstado = idEstado;
@@ -87,7 +87,10 @@ public class ClienteRequest {
 
     public Cliente toModel(EntityManager manager) {
         @NotNull Pais pais = manager.find(Pais.class, this.idPais);
-        @NotNull Estado estado = manager.find(Estado.class, this.idEstado);
+        Estado estado = null;
+        if(this.idEstado != null){
+            estado = manager.find(Estado.class, this.idEstado);
+        }
         @NotNull Cidade cidade = manager.find(Cidade.class, this.idCidade);
 
         return new Cliente(email, nome, sobrenome, documento, endereco,
@@ -104,5 +107,15 @@ public class ClienteRequest {
 
     public Long getIdPais() {
         return idPais;
+    }
+
+    public boolean estadoTaNoPais(List<Estado> estadosPais) {
+        for (Estado estado : estadosPais) {
+            if(estado.getId() == this.getIdEstado()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

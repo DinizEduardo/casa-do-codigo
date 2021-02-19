@@ -29,7 +29,6 @@ public class Estado {
         this.pais = pais;
     }
 
-    @Deprecated
     public Estado() {
     }
 
@@ -41,4 +40,7 @@ public class Estado {
         return nome;
     }
 
+    public Pais getPais() {
+        return pais;
+    }
 }

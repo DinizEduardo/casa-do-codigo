@@ -16,9 +16,14 @@ import java.lang.annotation.*;
 public @interface UniqueValues {
 
     Class<?> domainClass();
+
     String[] fields();
+
     String[] aliases();
+
     String message() default "Error unique values" ;
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

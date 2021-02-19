@@ -33,7 +33,6 @@ public class Cliente {
     @ManyToOne
     private Cidade cidade;
 
-    @NotNull
     @ManyToOne
     private Estado estado;
 
@@ -60,7 +59,7 @@ public class Cliente {
         this.email = email;
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.documento = documento.replaceAll("[^\\d]", "");
+        this.documento = documento;
         this.endereco = endereco;
         this.cidade = cidade;
         this.estado = estado;

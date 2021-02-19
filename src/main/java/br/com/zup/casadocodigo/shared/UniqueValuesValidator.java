@@ -37,15 +37,16 @@ public class UniqueValuesValidator implements ConstraintValidator<UniqueValues, 
         Query query = manager.createQuery(stringQuery);
 
         for (int i = 0; i < aliases.size(); i++) {
-            query.setParameter(fields.get(i), new BeanWrapperImpl(value)
-                    .getPropertyValue(fields.get(i)));
-        }
-
-        return query.getResultList().isEmpty();
+            query.setParameter(
+                        fields.get(i), // 1
+                new BeanWrapperImpl(value).getPropertyValue(fields.get(i)) // 2
+        );
     }
 
-    protected String queryBuilder() {
+        return query.getResultList().isEmpty();
+}
 
+    protected String queryBuilder() {
         String filter = IntStream.range(0, aliases.size())
                 .mapToObj(i -> " and " + aliases.get(i) + " = :" + fields.get(i))
                 .collect(Collectors.joining())
